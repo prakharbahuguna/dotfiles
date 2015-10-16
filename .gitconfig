@@ -7,7 +7,7 @@
 	s = status -s
 
 	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	d = diff
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
@@ -86,7 +86,7 @@
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
 	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+	whitespace = space-before-tab,tab-in-indent,trailing-space
 
 	# Make `git rebase` safer on OS X
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -95,6 +95,9 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+
+	# Set the default text editor to Atom
+	editor = "atom -w"
 
 [color]
 
@@ -105,8 +108,8 @@
 [color "branch"]
 
 	current = yellow reverse
-	local = yellow
-	remote = green
+	local = green
+	remote = cyan
 
 [color "diff"]
 
@@ -117,9 +120,9 @@
 
 [color "status"]
 
-	added = yellow
-	changed = green
-	untracked = cyan
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
 
 [diff]
 
@@ -170,3 +173,13 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[credential]
+
+	# Use the OS X keychain for retrieving SSH credentials
+	helper = osxkeychain
+
+[rerere]
+
+	# Use rerere for remembering hunk resolutions
+	enabled = true
