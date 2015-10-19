@@ -3,3 +3,4 @@ export MANPAGER='less -X';
 
 # Hide username from prompt unless it's different to current user
 export DEFAULT_USER=$(whoami)
+
