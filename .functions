@@ -36,6 +36,24 @@ function targz() {
 	echo "${tmpFile}.gz created successfully.";
 }
 
+# Create a .tar.xz archive
+function tarxz() {
+	local tmpFile="${@%/}.tar";
+	tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+
+	size=$(
+		stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
+		stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
+	);
+
+	local cmd="xz";
+
+	echo "Compressing .tar using \`${cmd}\`…";
+	"${cmd}" -v "${tmpFile}" || return 1;
+	[ -f "${tmpFile}" ] && rm "${tmpFile}";
+	echo "${tmpFile}.gz created successfully.";
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
@@ -86,16 +104,16 @@ function server() {
 }
 
 # Compare original and gzipped file size
-function gz() {
+function gzip() {
 	local origsize=$(wc -c < "$1");
-	local gzipsize=$(gzip -c "$1" | wc -c);
+	local gzipsize=$(pigz -c "$1" | wc -c);
 	local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
 	printf "orig: %d bytes\n" "$origsize";
 	printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
 }
 
 # Same but for xz
-function xz() {
+function xzip() {
 	local origsize=$(wc -c < "$1");
 	local xzipsize=$(xz -c "$1" | wc -c);
 	local ratio=$(echo "$xzipsize * 100 / $origsize" | bc -l);
