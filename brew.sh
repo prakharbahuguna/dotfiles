@@ -9,6 +9,7 @@ brew update
 brew upgrade --all
 
 # Install other useful binaries.
+brew install ack
 brew install ctags
 brew install dark-mode
 brew install --with-blk-sha1 git
