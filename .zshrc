@@ -1,3 +1,11 @@
+# Set this to where antigen should be installed
+ANTIGEN_DIR="$HOME/.antigen/install"
+# Install antigen if it's not already installed
+if [[ ! -d "$ANTIGEN_DIR" ]]; then
+    mkdir -p "$ANTIGEN_DIR"
+    git clone https://github.com/zsh-users/antigen "$ANTIGEN_DIR"
+fi
+
 # Load in antigen
 source ~/.antigen/install/antigen.zsh
 # Load config parameters
