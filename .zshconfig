@@ -1,8 +1,27 @@
-POWERLEVEL9K_SHOW_CHANGESET=true
-POWERLEVEL9K_CHANGESET_HASH_LENGTH=10
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# General oh-my-zsh settings
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 export DEFAULT_USER=$(whoami)
+
+
+# Powerlevel9K theme settings
+POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_CHANGESET_HASH_LENGTH=10
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+
+
+# History substring search
+setopt HIST_FIND_NO_DUPS
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# bind UP and DOWN arrow keys (compatibility fallback
+# for Ubuntu 12.04, Fedora 21, and MacOSX 10.9 users)
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
