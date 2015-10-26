@@ -25,16 +25,16 @@ fi
 
 # Check if we're on Linux and load specific packages
 if hash lsb_release &>/dev/null; then
-    $LINUX_RELEASE = $(lsb_release -si)
+    LINUX_RELEASE=$(lsb_release -si)
 
     # For Arch Linux
-    if [ $LINUX_RELEASE = "Arch" ]; then
+    if [[ $LINUX_RELEASE = "Arch" ]]; then
         antigen bundle archlinux
         antigen bundle systemd
     fi
 
     # For Ubuntu
-    if [ $LINUX_RELEASE = "Ubuntu" ]; then
+    if [[ $LINUX_RELEASE = "Ubuntu" ]]; then
         antigen bundle ubuntu
     fi
 fi
