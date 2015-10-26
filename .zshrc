@@ -45,6 +45,7 @@ antigen bundle colored-man-pages
 antigen bundle command-not-found
 antigen bundle extract
 antigen bundle gitfast
+antigen bundle k
 antigen bundle sudo
 antigen bundle tmux
 antigen bundle zsh-users/zsh-syntax-highlighting
