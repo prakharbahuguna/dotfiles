@@ -5,7 +5,6 @@ if [[ ! -d "$ANTIGEN_DIR" ]]; then
     mkdir -p "$ANTIGEN_DIR"
     git clone https://github.com/zsh-users/antigen "$ANTIGEN_DIR"
 fi
-
 # Load in antigen
 source ~/.antigen/install/antigen.zsh
 # Load config parameters
@@ -19,6 +18,9 @@ antigen use oh-my-zsh
 if [[ $OSTYPE = darwin* ]]; then
     antigen bundle brew
     antigen bundle osx
+
+    # Enable iTerm shell integration if available
+    test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 fi
 
 # Check if we're on Linux and load specific packages
