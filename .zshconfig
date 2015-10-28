@@ -3,7 +3,7 @@ HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
-export DEFAULT_USER=$(whoami)
+export DEFAULT_USER=$USER
 
 
 # Powerlevel9K theme settings
