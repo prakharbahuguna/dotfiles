@@ -3,7 +3,12 @@ HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
-export DEFAULT_USER=$USER
+
+
+# Packages to load
+ANTIGEN_PACKAGES=(cp colored-man-pages command-not-found extract gitfast \
+    rimraf/k sudo tmux zsh-users/zsh-syntax-highlighting \
+    zsh-users/zsh-history-substring-search)
 
 
 # Powerlevel9K theme settings
@@ -12,6 +17,10 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=10
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+
+
+# Syntax highlighter settings
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root line)
 
 
 # History substring search

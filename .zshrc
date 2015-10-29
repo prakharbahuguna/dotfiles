@@ -40,16 +40,9 @@ if hash lsb_release &>/dev/null; then
 fi
 
 # Load up the rest of our packages
-antigen bundle cp
-antigen bundle colored-man-pages
-antigen bundle command-not-found
-antigen bundle extract
-antigen bundle gitfast
-antigen bundle rimraf/k
-antigen bundle sudo
-antigen bundle tmux
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
+for package in $ANTIGEN_PACKAGES; do
+    antigen bundle $package
+done
 
 # Load the theme.
 antigen theme bhilburn/powerlevel9k powerlevel9k
@@ -59,6 +52,7 @@ antigen theme bhilburn/powerlevel9k powerlevel9k
 antigen apply
 
 
-# Load custom aliases and functions
+# Load custom aliases, functions and exports
 source ~/.aliases
 source ~/.functions
+source ~/.exports

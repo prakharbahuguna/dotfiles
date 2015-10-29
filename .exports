@@ -6,3 +6,6 @@ export MANPAGER='less -X';
 
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
+
+# Hide username from prompt unless it's different to current user
+export DEFAULT_USER=$(whoami)
