@@ -99,6 +99,11 @@
     # Set the default text editor to Atom
     editor = "atom -w"
 
+[branch]
+
+    # Rebase by default on pull
+    autosetuprebase = always
+
 [color]
 
     # Use colors in Git commands that are capable of colored output when
@@ -189,7 +194,8 @@
     smudge = git-lfs smudge %f
     required = true
 
-# My details.
 [user]
+
+    # My details.
     name = Prakhar Bahuguna
     email = me@prakhar.uk
