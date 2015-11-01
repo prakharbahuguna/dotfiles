@@ -6,9 +6,9 @@ HIST_STAMPS="yyyy-mm-dd"
 
 
 # Packages to load
-ANTIGEN_PACKAGES=(cp colored-man-pages command-not-found extract gitfast \
-    rimraf/k sudo tmux zsh-users/zsh-syntax-highlighting \
-    zsh-users/zsh-history-substring-search)
+ZGEN_OH_MY_ZSH_PACKAGES=(cp colored-man-pages command-not-found extract gitfast \
+    sudo tmux)
+ZGEN_OTHER_PACKAGES=(rimraf/k zsh-users/zsh-syntax-highlighting zsh-users/zsh-history-substring-search)
 
 
 # Powerlevel9K theme settings
@@ -34,3 +34,4 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # for Ubuntu 12.04, Fedora 21, and MacOSX 10.9 users)
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+ZSH_TMUX_AUTOSTART=true
