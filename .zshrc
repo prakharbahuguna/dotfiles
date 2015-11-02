@@ -6,10 +6,10 @@ if [[ ! -d "$ZGEN_DIR" ]]; then
     git clone https://github.com/tarjoilija/zgen "$ZGEN_DIR"
 fi
 
-# Load in zgen
-source $ZGEN_DIR/zgen.zsh
 # Load config parameters
 source ~/.zshconfig
+# Load in zgen
+source $ZGEN_DIR/zgen.zsh
 
 
 if ! zgen saved; then
