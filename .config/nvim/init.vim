@@ -73,6 +73,7 @@ Plug 'majutsushi/tagbar'                " Browse tags in file
 Plug 'scrooloose/nerdcommenter'         " Easy commenting
 Plug 'scrooloose/nerdtree'              " File browser
 Plug 'rhysd/vim-clang-format'           " Formatting for C family
+Plug 'rking/ag.vim'                     " Fast searching
 
 call plug#end()
 
