@@ -76,6 +76,8 @@ Plug 'rhysd/vim-clang-format'           " Formatting for C family
 Plug 'rking/ag.vim'                     " Fast searching
 Plug 'sjl/vitality.vim'                 " Tmux/iTerm integration
 Plug 'tmux-plugins/vim-tmux'            " Syntax highlighting for tmux config
+Plug 'xolox/vim-misc'                   " Required for vim-session
+Plug 'xolox/vim-session'                " Smarter session management
 
 
 call plug#end()
@@ -107,3 +109,9 @@ nnoremap <C-m> :TagbarToggle<CR>
 let g:clang_format#code_style='llvm'    " Use LLVM style
 autocmd FileType c,cpp,objc ClangFormatAutoEnable
 
+" Don't save hidden and unloaded buffers in sessions.
+set sessionoptions-=buffers
+" Automatically save and load session, with autosave every 5 mins
+let g:session_autosave='yes'
+let g:session_autoload='yes'
+let g:session_autosave_periodic=5
