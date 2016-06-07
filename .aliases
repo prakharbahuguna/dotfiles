@@ -5,7 +5,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Get OS X Software Updates, update Homebrew packages, then all vim-plug plugins
-alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup -s --force; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa'
+alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup -s --force; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zgen update; zgen selfupdate'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
