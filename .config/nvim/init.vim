@@ -74,6 +74,9 @@ Plug 'scrooloose/nerdcommenter'         " Easy commenting
 Plug 'scrooloose/nerdtree'              " File browser
 Plug 'rhysd/vim-clang-format'           " Formatting for C family
 Plug 'rking/ag.vim'                     " Fast searching
+Plug 'sjl/vitality.vim'                 " Tmux/iTerm integration
+Plug 'tmux-plugins/vim-tmux'            " Syntax highlighting for tmux config
+
 
 call plug#end()
 
