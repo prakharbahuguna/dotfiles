@@ -45,7 +45,7 @@ set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+  noremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
 " Use ; for commands.
@@ -101,9 +101,9 @@ autocmd! BufWritePost,BufEnter * Neomake
 let g:deoplete#enable_at_startup=1
 
 " Press Ctrl+N to open NERDtree
-nnoremap <C-n> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 " Press Ctrl+M to open Tagbar
-nnoremap <C-m> :TagbarToggle<CR>
+noremap <C-m> :TagbarToggle<CR>
 
 " Enable clang-format for C family code
 let g:clang_format#code_style='llvm'    " Use LLVM style
