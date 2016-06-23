@@ -30,10 +30,6 @@ setopt HIST_FIND_NO_DUPS
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 
-# bind UP and DOWN arrow keys (compatibility fallback
-# for Ubuntu 12.04, Fedora 21, and MacOSX 10.9 users)
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 if [ $TERM_PROGRAM = 'iTerm.app' ] || [ $TERM_PROGRAM = 'Apple_Terminal' ]; then
     ZSH_TMUX_AUTOSTART=true
 fi
