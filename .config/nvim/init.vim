@@ -1,4 +1,4 @@
-set t_Co=256            " Use 256 colors
+set t_Co=256              " Use 256 colors
 
 let mapleader='\<SPACE>'  " Map the leader key to SPACE
 set hidden                " More intuitive behaviour
@@ -60,10 +60,11 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 
-Plug 'freeo/vim-kalisi'                 " kalisi color scheme
+Plug 'chriskempson/base16-vim'          " base16 themes
 Plug 'ctrlpvim/ctrlp.vim'               " CtrlP for opening files
 Plug 'vim-airline/vim-airline'          " Airline status line
 Plug 'vim-airline/vim-airline-themes'   " Airline themes
+Plug 'edkolev/tmuxline.vim'             " Airline/tmux integration
 Plug 'janko-m/vim-test'                 " Run tests on code
 Plug 'benekastah/neomake'               " Make and/or lint
 Plug 'jmcantrell/vim-virtualenv'        " Virtualenv support
@@ -83,14 +84,17 @@ Plug 'xolox/vim-session'                " Smarter session management
 
 call plug#end()
 
-colorscheme kalisi      " Set colorscheme
-set background=dark     " Use dark version
+colorscheme base16-flat                 " Set colorscheme
 
 " Configure Airline to use theme, show buffers and use Powerline symbols
-let g:airline_theme='kalisi'
+let g:airline_theme='base16_flat'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#virtualenv#enabled=1
+
+" Have tmux use a similar theme for its status line
+let g:tmuxline_theme='airline'
+let g:tmuxline_preset='powerline'
 
 " Configure vim-test to use Neovim terminal
 let test#strategy='neoterm'

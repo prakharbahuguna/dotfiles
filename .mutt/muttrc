@@ -119,4 +119,4 @@ mailboxes \
 folder-hook Gmail/* source ~/.mutt/accounts/gmail
 folder-hook ARM/* source ~/.mutt/accounts/arm
 folder-hook . exec "collapse-all"
-source ~/.mutt/base16-flat.dark.256.muttrc
+source ~/.mutt/theme
