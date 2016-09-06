@@ -1,22 +1,23 @@
 set t_Co=256            " Use 256 colors
 
-let mapleader='\<SPACE>' " Map the leader key to SPACE
-set hidden              " More intuitive behaviour
-set showcmd             " Show (partial) command in status line.
-set showmatch           " Show matching brackets.
-set noshowmode          " Don't show current mode, airline does this
-set ruler               " Show the line and column numbers of the cursor.
-set cursorline          " Highlight current line
-set number              " Show the line numbers on the left side.
-set textwidth=120       " Hard-wrap long lines as you type them.
-set colorcolumn=+1      " Show right margin after end of width
-set expandtab           " Insert spaces when TAB is pressed.
-set tabstop=4           " Render TABs using this many spaces.
-set shiftwidth=4        " Indentation amount for < and > commands.
-set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
-set autochdir           " Switch to current file's parent directory.
-set timeoutlen=50       " Shorten the timeout
-set undofile            " Persistent undo file
+let mapleader='\<SPACE>'  " Map the leader key to SPACE
+set hidden                " More intuitive behaviour
+set showcmd               " Show (partial) command in status line.
+set showmatch             " Show matching brackets.
+set noshowmode            " Don't show current mode, airline does this
+set ruler                 " Show the line and column numbers of the cursor.
+set cursorline            " Highlight current line
+set number                " Show the line numbers on the left side.
+set textwidth=80          " Hard-wrap long lines as you type them.
+set colorcolumn=+1        " Show right margin after end of width
+set expandtab             " Insert spaces when TAB is pressed.
+set tabstop=2             " Render TABs using this many spaces.
+set shiftwidth=2          " Indentation amount for < and > commands.
+set nojoinspaces          " Prevents inserting two spaces after punctuation on a join (J)
+set autochdir             " Switch to current file's parent directory.
+set timeoutlen=50         " Shorten the timeout
+set undofile              " Persistent undo file
+set clipboard=unnamedplus " Use system clipboard
 
 " More natural splits
 set splitbelow          " Horizontal split below current.
@@ -109,9 +110,8 @@ noremap <C-m> :TagbarToggle<CR>
 let g:clang_format#code_style='llvm'    " Use LLVM style
 autocmd FileType c,cpp,objc ClangFormatAutoEnable
 
-" Don't save hidden and unloaded buffers in sessions.
-set sessionoptions-=buffers
-" Automatically save and load session, with autosave every 5 mins
+" Automatically save and load session, with autosave every 2 mins
 let g:session_autosave='yes'
 let g:session_autoload='yes'
-let g:session_autosave_periodic=5
+let g:session_autosave_periodic=2
+let g:session_directory='~/.config/nvim/sessions'

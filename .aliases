@@ -104,4 +104,4 @@ alias ssh='ssh -C'
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-alias getvid="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '~/Movies/%(title)s-%(id)s.%(ext)s'"
+alias getvid="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '~/Movies/%(title)s-%(id)s.%(ext)s' --external-downloader axel"
