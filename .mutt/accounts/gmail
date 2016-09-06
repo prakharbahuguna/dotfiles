@@ -1,0 +1,9 @@
+# vim: ft=muttrc
+set from          = "me@prakhar.uk"
+set sendmail      = "msmtp -a gmail"
+set spoolfile     = "+gmail/INBOX"
+set mbox          = "+gmail/[Google Mail]/Archive"
+set postponed     = "+gmail/[Google Mail]/Drafts"
+unset record
+
+alternates "^r3loaded@gmail.com$"

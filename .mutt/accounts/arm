@@ -1,0 +1,7 @@
+# vim: ft=muttrc
+set from          = "prakhar.bahuguna@arm.com"
+set sendmail      = "msmtp -a arm"
+set spoolfile     = "+arm/INBOX"
+set mbox          = "+arm/Archive"
+set postponed     = "+arm/Drafts"
+unset record
