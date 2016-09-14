@@ -4,8 +4,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Get OS X Software Updates, update Homebrew packages, then all vim-plug plugins
-alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup -s --force; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zgen update; zgen selfupdate'
+# Get OS X Software Updates, update Homebrew packages, vim-plug plugins, zgen
+# plugins and finally tpm plugins. Then clear all tmux-resurrect sessions, save
+# the current one and quit, ready for a fresh sesh
+alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup -s --force; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zgen update; zgen selfupdate; ~/.tmux/plugins/tpm/bin/update_plugins all; rm -rf ~/.tmux/resurrect; ~/.tmux/plugins/tmux-resurrect/scripts/save.sh; tmux kill-session'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -81,7 +83,7 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+    alias "$method"="lwp-request -m '$method'"
 done
 
 # Make Grunt print stack traces by default
