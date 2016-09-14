@@ -4,7 +4,7 @@ set folder           = ~/.mail               # mailbox location
 set alias_file       = ~/.mutt/alias         # where to store aliases
 set header_cache     = ~/.mutt/cache/headers # where to store headers
 set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
-#set certificate_file = ~/.mutt/certificates  # where to store certs
+set certificate_file = ~/.mutt/certificates  # where to store certs
 set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
 set tmpdir           = ~/.mutt/temp          # where to keep temp files
 set signature        = ~/.mutt/sig           # my signature file
@@ -107,15 +107,7 @@ set editor = "nvim"                  # use neovim to edit
 bind compose p postpone-message
 bind index p recall-message
 
-mailboxes \
-    "+gmail/Inbox" \
-    "+arm/Inbox" \
-    "+arm/Archive" \
-    "+arm/Drafts" \
-    "+arm/Starred" \
-    "+arm/Sent Items" \
-    "+arm/Deleted Items"
-
+source ~/.mutt/mailboxes
 folder-hook Gmail/* source ~/.mutt/accounts/gmail
 folder-hook ARM/* source ~/.mutt/accounts/arm
 folder-hook . exec "collapse-all"

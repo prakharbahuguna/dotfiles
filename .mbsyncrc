@@ -9,7 +9,7 @@ SyncState *
 IMAPAccount gmail
 Host imap.gmail.com
 User me@prakhar.uk
-PassCmd "security find-internet-password -w -a me@prakhar.uk -s imap.gmail.com ~/Library/Keychains/login.keychain"
+PassCmd "/usr/bin/security find-internet-password -w -a me@prakhar.uk -s imap.gmail.com ~/Library/Keychains/login.keychain"
 SSLType IMAPS
 SSLVersions TLSv1.2
 AuthMechs PLAIN
@@ -31,7 +31,7 @@ Patterns * "!\[Google Mail\]*" "\[Google Mail\]/All Mail" "\[Google Mail\]/Draft
 IMAPAccount arm
 Host outlook.office365.com
 User prakhar.bahuguna@arm.com
-PassCmd "security find-internet-password -w -a prakhar.bahuguna@arm.com -s outlook.office365.com ~/Library/Keychains/login.keychain"
+PassCmd "/usr/bin/security find-internet-password -w -a prakhar.bahuguna@arm.com -s outlook.office365.com ~/Library/Keychains/login.keychain"
 SSLType IMAPS
 SSLVersions TLSv1.2
 

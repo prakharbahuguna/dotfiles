@@ -1,0 +1,6 @@
+mailboxes \
+     "+gmail/Inbox" \
+     "+arm/Inbox" \
+     "+arm/Archive" \
+     "+arm/Drafts" \
+     "+arm/Starred"
