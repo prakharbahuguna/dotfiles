@@ -19,7 +19,6 @@ if ! zgen saved; then
     # OS X specific packages
     if [[ $OSTYPE = darwin* ]]; then
         zgen oh-my-zsh plugins/brew
-        zgen oh-my-zsh plugins/brew-cask
         zgen oh-my-zsh plugins/osx
 
         # Enable iTerm shell integration if available
