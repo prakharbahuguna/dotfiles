@@ -18,6 +18,7 @@ set autochdir             " Switch to current file's parent directory.
 set timeoutlen=50         " Shorten the timeout
 set undofile              " Persistent undo file
 set clipboard=unnamedplus " Use system clipboard
+set mouse=a               " Enable mouse support
 
 " More natural splits
 set splitbelow          " Horizontal split below current.
@@ -64,7 +65,6 @@ Plug 'chriskempson/base16-vim'          " base16 themes
 Plug 'ctrlpvim/ctrlp.vim'               " CtrlP for opening files
 Plug 'vim-airline/vim-airline'          " Airline status line
 Plug 'vim-airline/vim-airline-themes'   " Airline themes
-Plug 'edkolev/tmuxline.vim'             " Airline/tmux integration
 Plug 'janko-m/vim-test'                 " Run tests on code
 Plug 'benekastah/neomake'               " Make and/or lint
 Plug 'jmcantrell/vim-virtualenv'        " Virtualenv support

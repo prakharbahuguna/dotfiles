@@ -6,7 +6,7 @@
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install other useful binaries.
 brew install axel
@@ -20,6 +20,7 @@ brew install p7zip
 brew install pigz
 brew install pixz
 brew install pv
+brew install python3
 brew install rename
 brew install --with-wrap-pbcopy-and-pbpaste --with-wrap-launchctl reattach-to-user-namespace
 brew install ripgrep
@@ -32,3 +33,6 @@ brew install youtube-dl
 
 # Remove outdated versions from the cellar.
 brew cleanup -s
+
+# Prerequisited for nvim
+pip3 install neovim
