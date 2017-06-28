@@ -61,7 +61,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 
-Plug 'chriskempson/base16-vim'          " base16 themes
+Plug 'rakr/vim-one'                     " Atom One themes
 Plug 'ctrlpvim/ctrlp.vim'               " CtrlP for opening files
 Plug 'vim-airline/vim-airline'          " Airline status line
 Plug 'vim-airline/vim-airline-themes'   " Airline themes
@@ -84,10 +84,12 @@ Plug 'xolox/vim-session'                " Smarter session management
 
 call plug#end()
 
-colorscheme base16-flat                 " Set colorscheme
+set termguicolors                       " Enable true color support
+let g:one_allow_italics = 1             " Enable italics
+colorscheme one-dark                    " Set colorscheme
 
 " Configure Airline to use theme, show buffers and use Powerline symbols
-let g:airline_theme='base16_flat'
+let g:airline_theme='one'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#virtualenv#enabled=1
