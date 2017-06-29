@@ -11,6 +11,7 @@ brew upgrade
 # Install other useful binaries.
 brew install axel
 brew install ccache
+brew install ctags
 brew install git-lfs
 brew install iperf3
 brew install --with-pinentry --with-doc lastpass-cli
