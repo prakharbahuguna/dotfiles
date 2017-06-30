@@ -36,12 +36,12 @@ cd; curl -#L https://github.com/prakharbahuguna/dotfiles/tarball/master | tar -x
 
 To update later on, just run that command again.
 
-### Sensible OS X defaults
+### Sensible MacOS defaults
 
-When setting up a new Mac, you may want to set some sensible OS X defaults:
+When setting up a new Mac, you may want to set some sensible MacOS defaults:
 
 ```bash
-./.osx
+./.macos
 ```
 
 ### Install Homebrew formulae
