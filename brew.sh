@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
+# First, install Homebrew if it's not already installed
+command -v brew &> /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -12,6 +13,7 @@ brew upgrade
 brew install axel
 brew install ccache
 brew install ctags
+brew install fzf
 brew install git-lfs
 brew install iperf3
 brew install --with-pinentry --with-doc lastpass-cli
@@ -37,3 +39,6 @@ brew cleanup -s
 
 # Prerequisited for nvim
 pip3 install neovim
+
+# Install FZF bindings
+/usr/local/opt/fzf/install

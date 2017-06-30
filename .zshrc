@@ -61,3 +61,6 @@ fi
 source ~/.aliases
 source ~/.functions
 source ~/.exports
+
+# Load in FZF bindings for fun and profit
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

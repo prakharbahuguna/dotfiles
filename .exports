@@ -4,3 +4,10 @@ export MANPAGER='less -X';
 # Hide username from prompt unless it's different to current user
 export DEFAULT_USER=$(whoami)
 
+# Configure FZF options
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_TMUX=1
+export FZF_TMUX_HEIGHT=30%
+export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+export FZF_CTRL_R_OPTS="--exact --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
+export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
