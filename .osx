@@ -181,7 +181,7 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreade
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 # Load new settings before rebuilding the index
-killall mds > /dev/null 2>&1
+killall mds &> /dev/null
 # Make sure indexing is enabled for the main volume
 sudo mdutil -i on / > /dev/null
 # Rebuild the index from scratch
@@ -205,7 +205,7 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+command -v tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -248,6 +248,6 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Google Chrome" "Mail" "Messages" "Safari" \
 	"SystemUIServer" "Terminal" "iCal"; do
-	killall "${app}" > /dev/null 2>&1
+	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

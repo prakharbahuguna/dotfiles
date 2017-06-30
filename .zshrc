@@ -26,7 +26,7 @@ if ! zgen saved; then
     fi
 
     # Check if we're on Linux and load specific packages
-    if hash lsb_release &>/dev/null; then
+    if command -v lsb_release &>/dev/null; then
         LINUX_RELEASE=$(lsb_release -si)
 
         # For Arch Linux
