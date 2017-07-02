@@ -64,7 +64,7 @@ endfunction
 Plug 'rakr/vim-one'                     " Atom One themes
 Plug 'ctrlpvim/ctrlp.vim'               " CtrlP for opening files
 Plug 'vim-airline/vim-airline'          " Airline status line
-Plug 'vim-airline/vim-airline-themes'   " Airline themes
+Plug 'edkolev/tmuxline.vim'             " Tmux themeing
 Plug 'janko-m/vim-test'                 " Run tests on code
 Plug 'benekastah/neomake'               " Make and/or lint
 Plug 'jmcantrell/vim-virtualenv'        " Virtualenv support
@@ -95,7 +95,8 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#virtualenv#enabled=1
 
 " Have tmux use a similar theme for its status line
-let g:tmuxline_theme='airline'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_theme='powerline'
 let g:tmuxline_preset='powerline'
 
 " Configure vim-test to use Neovim terminal
