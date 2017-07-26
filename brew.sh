@@ -15,6 +15,7 @@ brew install ccache
 brew install ctags
 brew install fzf
 brew install git-lfs
+brew install git-review
 brew install iperf3
 brew install --with-pinentry --with-doc lastpass-cli
 brew install mobile-shell
