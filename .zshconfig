@@ -7,9 +7,8 @@ HIST_STAMPS="yyyy-mm-dd"
 
 
 # Packages to load
-_ZPLUG_OMZ_PACKAGES=(autopep8 cp colored-man-pages colorize \
-    command-not-found extract gitfast gitignore pep8 pip pylint python sudo \
-    tmux urltools)
+_ZPLUG_OMZ_PACKAGES=(autopep8 cp colored-man-pages command-not-found gitfast \
+    gitignore pep8 pip pylint python sudo tmux urltools)
 _ZPLUG_OTHER_PACKAGES=(rimraf/k zsh-users/zsh-syntax-highlighting \
     zsh-users/zsh-history-substring-search)
 
