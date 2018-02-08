@@ -7,7 +7,7 @@ alias egrep='egrep --color=auto'
 # Get OS X Software Updates, update Homebrew packages, vim-plug plugins, zgen
 # plugins and finally tpm plugins. Then clear all tmux-resurrect sessions, save
 # the current one and quit, ready for a fresh sesh
-alias update='softwareupdate -i -a; brew update; brew upgrade; brew cleanup -s; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zgen update; zgen selfupdate; ~/.tmux/plugins/tpm/bin/update_plugins all; rm -rf ~/.tmux/resurrect; ~/.tmux/plugins/tmux-resurrect/scripts/save.sh; tmux kill-session'
+alias update='brew update; brew upgrade --cleanup; brew cask upgrade; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zgen update; zgen selfupdate; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose; rm -rf ~/.tmux/resurrect; ~/.tmux/plugins/tmux-resurrect/scripts/save.sh; tmux kill-session'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -19,10 +19,6 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
@@ -84,13 +80,8 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="lwp-request -m '$method'"
 done
 
-# Make Grunt print stack traces by default
-command -v grunt > /dev/null && alias grunt="grunt --stack"
-
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-alias getvid="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '~/Movies/%(title)s-%(id)s.%(ext)s' --external-downloader axel"

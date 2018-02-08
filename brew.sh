@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # First, install Homebrew if it's not already installed
 command -v brew > /dev/null || ruby -e \
@@ -12,10 +12,10 @@ brew upgrade --cleanup
 brew cask upgrade
 
 # Package lists
-pkg_list = (axel ccache checkbashisms clang-format ctags fzf git-lfs \
-    git-review iperf3 mosh neovim pixz pv rename reattach-to-user-namespace \
-    ripgrep shellcheck speedtest-cli tmux tree uncrustify)
-cask_list = (anaconda font-hack)
+pkg_list=(axel ccache checkbashisms clang-format ctags fzf git-lfs git-review \
+    iperf3 mosh neovim pixz pv rename reattach-to-user-namespace ripgrep \
+    shellcheck speedtest-cli tmux tree uncrustify)
+cask_list=(anaconda font-hack)
 
 # Install the packages
 brew install ${pkg_list}

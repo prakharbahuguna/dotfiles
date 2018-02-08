@@ -30,6 +30,6 @@ setopt HIST_FIND_NO_DUPS
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 
-if [ $TERM_PROGRAM = 'iTerm.app' ] || [ $TERM_PROGRAM = 'Apple_Terminal' ]; then
+if [ $TERM_PROGRAM = 'iTerm.app' ]; then
     ZSH_TMUX_AUTOSTART=true
 fi
