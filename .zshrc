@@ -50,3 +50,6 @@ zplug load
 
 # Load in FZF bindings for fun and profit
 [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
+
+# Clean up the env a bit
+unset _ZPLUG_OMZ_PACKAGES _ZPLUG_OTHER_PACKAGES _ZPLUG_THEME
