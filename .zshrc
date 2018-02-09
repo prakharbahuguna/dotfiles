@@ -26,10 +26,10 @@ if [ "$(uname)" = "Linux" ]; then
 fi
 
 # Load up the rest of our packages
-for package in ${_ZPLUG_OMZ_PACKAGES}; do
+for package in "${_ZPLUG_OMZ_PACKAGES[@]}"; do
     zplug "plugins/${package}", from:"oh-my-zsh"
 done
-for package in ${_ZPLUG_OTHER_PACKAGES}; do
+for package in "${_ZPLUG_OTHER_PACKAGES[@]}"; do
     zplug "${package}"
 done
 

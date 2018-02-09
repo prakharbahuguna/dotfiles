@@ -18,8 +18,8 @@ pkg_list=(axel ccache checkbashisms clang-format ctags fzf git-lfs git-review \
 cask_list=(anaconda font-hack)
 
 # Install the packages
-brew install ${pkg_list}
-brew cask install ${cask_list}
+brew install "${pkg_list[@]}"
+brew cask install "${cask_list[@]}"
 
 # Remove outdated versions from the cellar.
 brew cleanup -s
