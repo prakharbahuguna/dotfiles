@@ -1,0 +1,38 @@
+{
+    "editor.autoIndent": true,
+    "editor.cursorBlinking": "phase",
+    "editor.fontFamily": "Hack, Menlo, Monaco, Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.quickSuggestions": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [ 80, 130 ],
+    "editor.wrappingIndent": "indent",
+
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    "git.autofetch": true,
+
+    "search.smartCase": true,
+
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+
+    "terminal.explorerKind": "external",
+    "terminal.external.osxExec": "iTerm.app",
+
+    "update.enableWindowsBackgroundUpdates": true,
+
+    "window.restoreFullscreen": true,
+    "window.restoreWindows": "all",
+
+    "workbench.fontAliasing": "auto",
+    "workbench.statusBar.feedback.visible": false,
+
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "python.autoComplete.addBrackets": true,
+    "python.linting.pep8Enabled": true
+}
