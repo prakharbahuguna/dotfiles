@@ -1,6 +1,6 @@
 # Prakhar’s dotfiles
 
-This is a copy of my own dotfiles, based off [Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles) but heavily modified for my own use, with many sections deleted as they don't apply to me. If you're looking for a template for your own dotfiles, you'll probably want to use Mathias's repository instead.
+This is a copy of my own dotfiles, based off [Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles) but heavily modified for my own use, with many, many changes to suit my work. If you're looking for a template for your own dotfiles, you'll probably want to use Mathias's repository instead.
 
 ## Installation
 
@@ -8,22 +8,22 @@ This is a copy of my own dotfiles, based off [Mathias's dotfiles](https://github
 
 ### Using Git and the bootstrap script
 
-You can clone the repository wherever you want. (I like to keep it in `~/GitRepos/dotfiles`.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+You can clone the repository wherever you want. (I like to keep it in `~/repos/dotfiles`.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/prakharbahuguna/dotfiles.git && cd dotfiles && source bootstrap.sh
+git clone https://github.com/prakharbahuguna/dotfiles.git && dotfiles/bootstrap.sh
 ```
 
-To update, `cd` into your local `dotfiles` repository and then:
+To update, `cd` into your local `dotfiles` repository, `git pull` the latest changes, and then re-run the script:
 
 ```bash
-source bootstrap.sh
+./bootstrap.sh
 ```
 
 Alternatively, to update while avoiding the confirmation prompt:
 
 ```bash
-set -- -f; source bootstrap.sh
+./bootstrap.sh -f
 ```
 
 ### Git-free install
@@ -52,4 +52,12 @@ When setting up a new Mac, you may want to install some common [Homebrew](http:/
 ./brew.sh
 ```
 
-In future, I may add an equivalent script to install these packages on Arch/Ubuntu Linux as well as on msys2 for Windows.
+### Setup Visual Studio Code
+
+To install the settings file and extensions for Visual Studio Code:
+
+```bash
+./vscode.sh
+```
+
+While this dotfiles repo is primarily targeted at MacOS since that’s where I spend most of my time, it should also work fine on Ubuntu.
