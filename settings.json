@@ -7,7 +7,7 @@
     "editor.renderControlCharacters": true,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [ 80, 130 ],
+    "editor.rulers": [ 80 ],
     "editor.wrappingIndent": "indent",
 
     "files.insertFinalNewline": true,
