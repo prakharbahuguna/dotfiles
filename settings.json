@@ -29,6 +29,7 @@
     "window.restoreFullscreen": true,
     "window.restoreWindows": "all",
 
+    "workbench.colorTheme": "Dracula",
     "workbench.fontAliasing": "auto",
     "workbench.statusBar.feedback.visible": false,
 

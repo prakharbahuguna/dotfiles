@@ -61,7 +61,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 
-Plug 'rakr/vim-one'                     " Atom One themes
+Plug 'dracula/vim', { 'as': 'dracula' } " Dracula theme
 Plug 'ctrlpvim/ctrlp.vim'               " CtrlP for opening files
 Plug 'vim-airline/vim-airline'          " Airline status line
 Plug 'edkolev/tmuxline.vim'             " Tmux themeing
@@ -86,10 +86,10 @@ call plug#end()
 
 set termguicolors                       " Enable true color support
 let g:one_allow_italics = 1             " Enable italics
-colorscheme one-dark                    " Set colorscheme
+colorscheme dracula                     " Set colorscheme
 
 " Configure Airline to use theme, show buffers and use Powerline symbols
-let g:airline_theme='one'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#virtualenv#enabled=1
