@@ -15,7 +15,7 @@ brew cask upgrade
 pkg_list=(axel ccache checkbashisms clang-format ctags fzf git-lfs git-review \
     iperf3 mosh neovim pixz pv rename reattach-to-user-namespace ripgrep \
     shellcheck speedtest-cli tmux tree uncrustify)
-cask_list=(anaconda font-hack)
+cask_list=(anaconda font-hack font-fira-code)
 
 # Install the packages
 brew install "${pkg_list[@]}"

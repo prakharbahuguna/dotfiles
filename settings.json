@@ -1,7 +1,8 @@
 {
     "editor.autoIndent": true,
     "editor.cursorBlinking": "phase",
-    "editor.fontFamily": "Hack, Menlo, Monaco, Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Fira Code, Hack, Menlo, Monaco, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.quickSuggestions": true,
     "editor.renderControlCharacters": true,

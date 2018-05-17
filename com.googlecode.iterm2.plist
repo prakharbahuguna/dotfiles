@@ -524,7 +524,7 @@
 		</array>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>2369 -507 445 77 1440 -540 2560 1440 </string>
+	<string>437 33 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>269 284 606 456 0 0 1280 800 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -532,11 +532,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>115 128 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2496 -8 796 473 1440 -540 2560 1440 </string>
+	<string>386 370 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>1667 294 592 584 1440 -540 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 80 1081 758 0 0 1440 878 </string>
+	<string>1440 -398 1081 758 1440 -540 2560 1440 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1239,7 +1239,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Hack-Regular 14</string>
+			<string>FiraCode-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1382,7 +1382,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-01T10:33:01Z</date>
+	<date>2018-05-01T09:43:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1393,12 +1393,14 @@
 	<real>1519645440</real>
 	<key>UseLayers</key>
 	<true/>
+	<key>UseMetal</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
