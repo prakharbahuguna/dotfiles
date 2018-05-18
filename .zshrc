@@ -7,7 +7,7 @@ if [ ! -d "${ZPLUG_HOME}" ]; then
 fi
 
 # Load config parameters
-. ./.zshconfig
+. ~/.zshconfig
 # Load in zplug
 . "${ZPLUG_HOME}/init.zsh"
 
@@ -44,9 +44,9 @@ zplug load
 
 
 # Load custom aliases, functions and exports
-. ./.aliases
-. ./.functions
-. ./.exports
+. ~/.aliases
+. ~/.functions
+. ~/.exports
 
 # Load in FZF bindings for fun and profit
 [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
