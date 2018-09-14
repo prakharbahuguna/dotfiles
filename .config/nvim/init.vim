@@ -11,8 +11,8 @@ set number                " Show the line numbers on the left side.
 set textwidth=80          " Hard-wrap long lines as you type them.
 set colorcolumn=+1        " Show right margin after end of width
 set expandtab             " Insert spaces when TAB is pressed.
-set tabstop=2             " Render TABs using this many spaces.
-set shiftwidth=2          " Indentation amount for < and > commands.
+set tabstop=4             " Render TABs using this many spaces.
+set shiftwidth=4          " Indentation amount for < and > commands.
 set nojoinspaces          " Prevents inserting two spaces after punctuation on a join (J)
 set autochdir             " Switch to current file's parent directory.
 set timeoutlen=50         " Shorten the timeout
@@ -61,7 +61,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 
-Plug 'dracula/vim', { 'as': 'dracula' } " Dracula theme
+Plug 'ayu-theme/ayu-vim'
 Plug 'ctrlpvim/ctrlp.vim'               " CtrlP for opening files
 Plug 'vim-airline/vim-airline'          " Airline status line
 Plug 'edkolev/tmuxline.vim'             " Tmux themeing
@@ -75,7 +75,7 @@ Plug 'majutsushi/tagbar'                " Browse tags in file
 Plug 'scrooloose/nerdcommenter'         " Easy commenting
 Plug 'scrooloose/nerdtree'              " File browser
 Plug 'rhysd/vim-clang-format'           " Formatting for C family
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'          " Fast searching
+Plug '/usr/local/opt/fzf' | Plug '~/.fzf' | Plug 'junegunn/fzf.vim'          " Fast searching
 Plug 'sjl/vitality.vim'                 " Tmux/iTerm integration
 Plug 'tmux-plugins/vim-tmux'            " Syntax highlighting for tmux config
 Plug 'xolox/vim-misc'                   " Required for vim-session
@@ -84,12 +84,11 @@ Plug 'xolox/vim-session'                " Smarter session management
 
 call plug#end()
 
-set termguicolors                       " Enable true color support
-let g:one_allow_italics = 1             " Enable italics
-colorscheme dracula                     " Set colorscheme
+set termguicolors                      " Enable true color support
+colorscheme ayu                         " Set colorscheme
 
 " Configure Airline to use theme, show buffers and use Powerline symbols
-let g:airline_theme='dracula'
+let g:airline_theme='ayu'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#virtualenv#enabled=1

@@ -11,7 +11,7 @@ if command -v code > /dev/null; then
     cp settings.json "${VSCODE_DIR}"
 
     extensions=(MS-DevSkim.vscode-devskim RReverser.llvm
-                dracula-theme.theme-dracula eamodio.gitlens fallenwood.vimL
+                teabyii.ayu eamodio.gitlens fallenwood.vimL
                 krvajalm.linter-gfortran ms-python.python ms-vscode.cpptools
                 llvm.tablegen timonwong.shellcheck)
 

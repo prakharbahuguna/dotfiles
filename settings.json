@@ -8,7 +8,7 @@
     "editor.renderControlCharacters": true,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [ 80 ],
+    "editor.rulers": [ 80, 130 ],
     "editor.wrappingIndent": "indent",
 
     "files.insertFinalNewline": true,
@@ -30,11 +30,15 @@
     "window.restoreFullscreen": true,
     "window.restoreWindows": "all",
 
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Ayu Dark",
     "workbench.fontAliasing": "auto",
     "workbench.statusBar.feedback.visible": false,
 
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "python.autoComplete.addBrackets": true,
-    "python.linting.pep8Enabled": true
+    "python.linting.pep8Enabled": true,
+    "python.linting.pep8Args": [
+        "--max-line-length=130"
+    ],
+    "python.pythonPath": "/usr/local/bin/python3",
 }
