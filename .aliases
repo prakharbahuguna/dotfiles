@@ -7,7 +7,7 @@ alias egrep='egrep --color=auto'
 # Get OS X Software Updates, update Homebrew packages, vim-plug plugins, zplug
 # plugins and finally tpm plugins. Then clear all tmux-resurrect sessions, save
 # the current one and quit, ready for a fresh sesh
-alias update='brew update; brew upgrade --cleanup; brew cask upgrade; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zplug update; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose; rm -rf ~/.tmux/resurrect; ~/.tmux/plugins/tmux-resurrect/scripts/save.sh; tmux kill-session'
+alias update='brew update; brew upgrade --cleanup; brew cask upgrade; brew cask cleanup; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zplug update; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose; rm -rf ~/.tmux/resurrect; ~/.tmux/plugins/tmux-resurrect/scripts/save.sh; tmux kill-session'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -31,11 +31,6 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 # OS X has no `sha256sum`, so use `shasum` as a fallback
 command -v sha256sum > /dev/null || alias sha256sum="shasum -a 256"
-
-# JavaScriptCore REPL
-jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-[ -e "${jscbin}" ] && alias jsc="${jscbin}";
-unset jscbin;
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"

@@ -13,9 +13,12 @@ brew cask upgrade
 
 # Package lists
 pkg_list=(axel ccache checkbashisms clang-format ctags fzf git-lfs git-review \
-    iperf3 neovim pixz pv python rename reattach-to-user-namespace ripgrep \
-    shellcheck speedtest-cli tmux tree uncrustify)
-cask_list=(font-fira-code)
+    iperf3 neovim pixz pv python reattach-to-user-namespace rename ripgrep \
+    shellcheck speedtest-cli tmux tree uncrustify youtube-dl)
+cask_list=(appcleaner coconutbattery docker firefox flycut font-fira-code \
+    gfxcardstatus iterm2 qbittorrent scroll-reverser shifty smcfancontrol \
+    spotify visual-studio-code
+)
 
 # Install the packages
 brew install "${pkg_list[@]}"
