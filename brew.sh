@@ -22,6 +22,7 @@ cask_list=(appcleaner coconutbattery docker firefox flycut font-fira-code \
 
 # Install the packages
 brew install "${pkg_list[@]}"
+brew tap caskroom/fonts
 brew cask install "${cask_list[@]}"
 
 # Remove outdated versions from the cellar.
