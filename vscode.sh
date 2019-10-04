@@ -10,10 +10,21 @@ if command -v code > /dev/null; then
     [ ! -d "${VSCODE_DIR}" ] && mkdir -p "${VSCODE_DIR}"
     cp settings.json "${VSCODE_DIR}"
 
-    extensions=(MS-DevSkim.vscode-devskim RReverser.llvm
-                teabyii.ayu eamodio.gitlens fallenwood.vimL
-                krvajalm.linter-gfortran ms-python.python ms-vscode.cpptools
-                llvm.tablegen timonwong.shellcheck)
+    extensions=(
+        CoenraadS.bracket-pair-colorizer-2
+        eamodio.gitlens
+        EditorConfig.EditorConfig
+        Equinusocio.vsc-material-theme
+        fallenwood.vimL
+        krvajalm.linter-gfortran
+        liximomo.sftp
+        mechatroner.rainbow-csv
+        ms-azuretools.vscode-docker
+        ms-python.python
+        ms-vscode.cpptools
+        PKief.material-icon-theme
+        timonwong.shellcheck
+    )
 
     for ext in "${extensions[@]}"; do
         code --install-extension "${ext}" || true

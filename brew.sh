@@ -8,16 +8,17 @@ command -v brew > /dev/null || ruby -e \
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --cleanup
+brew upgrade
 brew cask upgrade
 
 # Package lists
-pkg_list=(axel ccache checkbashisms clang-format ctags fzf git-lfs git-review \
-    iperf3 neovim pixz pv python reattach-to-user-namespace rename ripgrep \
-    shellcheck speedtest-cli tmux tree uncrustify youtube-dl)
+pkg_list=(axel bitwarden-cli ccache checkbashisms clang-format ctags fzf \
+    git-lfs git-review iperf3 neovim pixz pv python \
+    reattach-to-user-namespace rename ripgrep shellcheck speedtest-cli tmux \
+    tree uncrustify youtube-dl)
 cask_list=(appcleaner coconutbattery docker firefox flycut font-fira-code \
-    gfxcardstatus iterm2 qbittorrent scroll-reverser shifty smcfancontrol \
-    spotify visual-studio-code
+    gfxcardstatus iterm2 qbittorrent scroll-reverser smcfancontrol spotify \
+    visual-studio-code vlc
 )
 
 # Install the packages
@@ -26,8 +27,7 @@ brew tap caskroom/fonts
 brew cask install "${cask_list[@]}"
 
 # Remove outdated versions from the cellar.
-brew cleanup -s
-brew cask cleanup
+brew cleanup
 
 # Post-install stuff
 git lfs install
