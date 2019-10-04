@@ -37,7 +37,3 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor line)
 setopt HIST_IGNORE_ALL_DUPS
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
-
-if [ "${TERM_PROGRAM}" = 'iTerm.app' ]; then
-    ZSH_TMUX_AUTOSTART=true
-fi
