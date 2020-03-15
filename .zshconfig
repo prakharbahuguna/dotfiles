@@ -7,7 +7,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 
 # Packages to load
-_ZPLUG_OMZ_PACKAGES=(autopep8 cp colored-man-pages command-not-found gitfast \
+_ZPLUG_OMZ_PACKAGES=(autopep8 cp colored-man-pages command-not-found gitfast git \
     pep8 pip pylint python sudo tmux urltools)
 _ZPLUG_OTHER_PACKAGES=(rimraf/k MichaelAquilina/zsh-you-should-use \
     Tarrasch/zsh-autoenv voronkovich/gitignore.plugin.zsh \
