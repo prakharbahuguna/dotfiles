@@ -1,44 +1,51 @@
 {
-    "editor.autoIndent": true,
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "Fira Code, Hack, Menlo, Monaco, Consolas, 'Courier New', monospace",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss07'",
     "editor.fontSize": 14,
-    "editor.quickSuggestions": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
     "editor.renderControlCharacters": true,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [ 80, 130 ],
-    "editor.wrappingIndent": "indent",
-
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.cursorSmoothCaretAnimation": true,
+    "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-
+    "git.allowForcePush": true,
     "git.autofetch": true,
-
-    "search.smartCase": true,
-
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-
-    "terminal.explorerKind": "external",
-    "terminal.external.osxExec": "iTerm.app",
-
-    "update.enableWindowsBackgroundUpdates": true,
-
-    "window.restoreFullscreen": true,
-    "window.restoreWindows": "all",
-
-    "workbench.colorTheme": "Ayu Dark",
-    "workbench.fontAliasing": "auto",
-    "workbench.statusBar.feedback.visible": false,
-
-    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "git.autoStash": true,
+    "git.enableSmartCommit": true,
+    "git.fetchOnPull": true,
+    "git.showPushSuccessNotification": true,
+    "python.analysis.memory.keepLibraryAst": true,
+    "python.analysis.memory.keepLibraryLocalVariables": true,
     "python.autoComplete.addBrackets": true,
-    "python.linting.pep8Enabled": true,
-    "python.linting.pep8Args": [
-        "--max-line-length=130"
+    "python.linting.mypyEnabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleArgs": [
+        "--max-line-length=120"
     ],
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.formatting.autopep8Args": [
+        "--max-line-length=120"
+    ],
+    "python.pythonPath": "python3",
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    "search.useGlobalIgnoreFiles": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "window.restoreWindows": "all",
+    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.fontAliasing": "auto",
+    "workbench.iconTheme": "ayu",
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
 }
