@@ -1,21 +1,3 @@
-# Create a new directory and enter it
-function mkd() {
-    mkdir -p "$@" && cd "$_"
-}
-
-# Create a .tar.xz archive
-function tarxz() {
-    local tmpFile="${@%/}.tar.xz"
-
-    if command -v pixz &> /dev/null; then
-        tar -Ipixz -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
-    else
-        tar -cvJf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
-    fi;
-
-    echo "${tmpFile}.xz created successfully.";
-}
-
 # Determine size of a file or total size of a directory
 function fs() {
     if du -b /dev/null > /dev/null 2>&1; then
@@ -30,11 +12,6 @@ function fs() {
     fi;
 }
 
-# Use Git's colored diff
-function diff() {
-    git diff --no-index --color-words "$@";
-}
-
 # Create a data URL from a file
 function dataurl() {
     local mimeType=$(file -b --mime-type "$1");
@@ -44,39 +21,7 @@ function dataurl() {
     echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
 }
 
-# Create a git.io short URL
-function gitio() {
-    if [ -z "${1}" ] || [ -z "${2}" ]; then
-        echo "Usage: \`gitio slug url\`";
-        return 1;
-    fi;
-    curl -i https://git.io/ -F "url=${2}" -F "code=${1}";
-}
-
-# Run `dig` and display the most useful info
-function digga() {
-    dig +nocmd "$1" any +multiline +noall +answer;
-}
-
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
-function tre() {
-    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
-}
-
-# Press Ctrl-X Ctrl-R to execute the selected command in the Ctrl-R list
-fzf-history-widget-accept() {
-  fzf-history-widget
-  zle accept-line
-}
-
-zle     -N     fzf-history-widget-accept
-bindkey '^X^R' fzf-history-widget-accept
-
 # Git/FZF functions
-
 is_in_git_repo() {
   git rev-parse HEAD &> /dev/null
 }

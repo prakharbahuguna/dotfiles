@@ -1,13 +1,6 @@
-# Always enable colored `grep` output
-# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# Get OS X Software Updates, update Homebrew packages, vim-plug plugins, zplug
-# plugins and finally tpm plugins. Then clear all tmux-resurrect sessions, save
-# the current one and quit, ready for a fresh sesh
-alias update='brew update; brew upgrade; brew cask upgrade; brew cleanup; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zplug update; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose; rm -rf ~/.tmux/resurrect; ~/.tmux/plugins/tmux-resurrect/scripts/save.sh; tmux kill-session'
+# Update Homebrew packages, vim-plug plugins, zplug plugins and finally tpm plugins.
+# Then check for MacOS updates
+alias update='brew update; brew upgrade; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zplug update; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -23,13 +16,13 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
 
-# OS X has no `md5sum`, so use `md5` as a fallback
+# MacOS has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
 
-# OS X has no `sha1sum`, so use `shasum` as a fallback
+# MacOS has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-# OS X has no `sha256sum`, so use `shasum` as a fallback
+# MacOS has no `sha256sum`, so use `shasum` as a fallback
 command -v sha256sum > /dev/null || alias sha256sum="shasum -a 256"
 
 # Trim new lines and copy to clipboard
@@ -43,33 +36,22 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Finally, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
-# Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
 alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
-
-# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-alias plistbuddy="/usr/libexec/PlistBuddy"
 
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
 
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
-alias map="xargs -n1"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-    alias "$method"="lwp-request -m '$method'"
-done
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+alias tre='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
+
+# Use Git's colored diff
+alias diff='git diff --no-index --color-words "$@"'
