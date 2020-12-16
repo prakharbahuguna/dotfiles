@@ -53,15 +53,9 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Enable subpixel font rendering on non-Apple LCDs
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
-
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
-
-# Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -188,14 +182,11 @@ sudo mdutil -i on / > /dev/null
 sudo mdutil -E / > /dev/null
 
 ###############################################################################
-# Terminal & iTerm 2                                                          #
+# Terminal                                                                    #
 ###############################################################################
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
 # Time Machine                                                                #
