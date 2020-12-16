@@ -56,35 +56,16 @@ nnoremap ; :
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
-" Function for updating deoplete plugins
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-
 Plug 'ayu-theme/ayu-vim'
-Plug 'ctrlpvim/ctrlp.vim'               " CtrlP for opening files
 Plug 'vim-airline/vim-airline'          " Airline status line
-Plug 'edkolev/tmuxline.vim'             " Tmux themeing
-Plug 'janko-m/vim-test'                 " Run tests on code
-Plug 'benekastah/neomake'               " Make and/or lint
-Plug 'jmcantrell/vim-virtualenv'        " Virtualenv support
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') } " Code completion
 Plug 'tpope/vim-fugitive'               " Git integration
 Plug 'airblade/vim-gitgutter'           " Git gutter signs
-Plug 'majutsushi/tagbar'                " Browse tags in file
-Plug 'scrooloose/nerdcommenter'         " Easy commenting
-Plug 'scrooloose/nerdtree'              " File browser
-Plug 'rhysd/vim-clang-format'           " Formatting for C family
 Plug '/usr/local/opt/fzf' | Plug '~/.fzf' | Plug 'junegunn/fzf.vim'          " Fast searching
 Plug 'sjl/vitality.vim'                 " Tmux/iTerm integration
-Plug 'tmux-plugins/vim-tmux'            " Syntax highlighting for tmux config
-Plug 'xolox/vim-misc'                   " Required for vim-session
-Plug 'xolox/vim-session'                " Smarter session management
-
 
 call plug#end()
 
-set termguicolors                      " Enable true color support
+set termguicolors                       " Enable true color support
 colorscheme ayu                         " Set colorscheme
 
 " Configure Airline to use theme, show buffers and use Powerline symbols
@@ -92,32 +73,3 @@ let g:airline_theme='ayu'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#virtualenv#enabled=1
-
-" Have tmux use a similar theme for its status line
-let g:airline#extensions#tmuxline#enabled = 0
-let g:tmuxline_theme='powerline'
-let g:tmuxline_preset='powerline'
-
-" Configure vim-test to use Neovim terminal
-let test#strategy='neoterm'
-
-" Run Neomake on save
-autocmd! BufWritePost,BufEnter * Neomake
-
-" Use deoplete.
-let g:deoplete#enable_at_startup=1
-
-" Press Ctrl+N to open NERDtree
-noremap <C-n> :NERDTreeToggle<CR>
-" Press Ctrl+M to open Tagbar
-noremap <C-m> :TagbarToggle<CR>
-
-" Enable clang-format for C family code
-let g:clang_format#code_style='llvm'    " Use LLVM style
-autocmd FileType c,cpp,objc ClangFormatAutoEnable
-
-" Automatically save and load session, with autosave every 2 mins
-let g:session_autosave='yes'
-let g:session_autoload='yes'
-let g:session_autosave_periodic=2
-let g:session_directory='~/.config/nvim/sessions'
