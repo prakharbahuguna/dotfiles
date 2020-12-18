@@ -100,6 +100,10 @@
     precomposeunicode = false
     fscache = true
 
+    # Speed up commands involving untracked files such as `git status`.
+    # https://git-scm.com/docs/git-update-index#_untracked_cache
+    untrackedCache = true
+
 [branch]
 
     # Rebase by default on pull
@@ -186,11 +190,6 @@
 
     # Use the OS X keychain for retrieving SSH credentials
     helper = osxkeychain
-
-[rerere]
-
-    # Use rerere for remembering hunk resolutions
-    enabled = true
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
