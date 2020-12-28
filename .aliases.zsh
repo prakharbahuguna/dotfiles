@@ -1,6 +1,6 @@
 # Update Homebrew packages, vim-plug plugins, zplug plugins and finally tpm plugins.
 # Then check for MacOS updates
-alias update='brew update; brew upgrade; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zplug update; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose'
+alias update='brew update; brew upgrade; mas upgrade; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zplug update; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

@@ -12,17 +12,19 @@ brew upgrade
 
 # Package lists
 pkg_list=(bitwarden-cli ccache checkbashisms clang-format ctags fzf git-lfs \
-    iperf3 neovim python rename ripgrep shellcheck speedtest-cli tmux tree \
+    iperf3 mas neovim python rename ripgrep shellcheck speedtest-cli tmux tree \
     uncrustify youtube-dl)
 cask_list=(appcleaner coconutbattery docker firefox flycut font-fira-code \
     gfxcardstatus iterm2 macs-fan-control qbittorrent scroll-reverser spotify \
     visual-studio-code vlc
 )
+mas_list=(1116599239 585829637 1147396723 1449412482 1352778147 1295203466)
 
 # Install the packages
 brew install "${pkg_list[@]}"
 brew tap homebrew/cask-fonts
 brew install --cask "${cask_list[@]}"
+mas install "${mas_list[@]}"
 
 # Remove outdated versions from the cellar.
 brew cleanup
