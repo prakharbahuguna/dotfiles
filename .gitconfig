@@ -80,6 +80,9 @@
     # Detect whitespace errors when applying a patch
     whitespace = fix
 
+[submodule]
+    fetchJobs = 4
+
 [core]
 
     # Use custom `.gitignore` and `.gitattributes`
