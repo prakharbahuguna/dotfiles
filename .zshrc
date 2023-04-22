@@ -21,12 +21,14 @@ source "${ZPLUG_HOME}/init.zsh"
 # Configure lugin settings
 zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
-zstyle ':prezto:module:terminal' auto-title 'yes'
-zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
-zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
-zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
-zstyle ':prezto:module:syntax-highlighting' highlighters 'main' 'brackets' 'line' 'cursor'
+zstyle ':prezto:module:gnu-utility' prefix 'g'
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
+zstyle ':prezto:module:syntax-highlighting' highlighters 'main' 'brackets' 'line' 'cursor'
+zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:utility' safe-ops 'no'.
 
 # Let zplug manage itself
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -34,6 +36,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'modules/environment', from:prezto
 zplug 'modules/history', from:prezto
 zplug 'modules/terminal', from:prezto
+zplug 'modules/gnu-utility', from:prezto
 zplug 'modules/utility', from:prezto
 zplug 'modules/tmux', from:prezto
 zplug 'modules/completion', from:prezto
