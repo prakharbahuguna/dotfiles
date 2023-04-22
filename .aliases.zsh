@@ -2,8 +2,20 @@
 # Then check for MacOS updates
 alias update='brew update; brew upgrade; mas upgrade; nvim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qa; zplug update; ~/.tmux/plugins/tpm/bin/update_plugins all; softwareupdate -ia --all --verbose'
 
+# Replace ls with exa
+alias ls='exa --icons --group-directories-first'
+alias l='ls -1a'
+alias ll='ls -l'
+alias la='ll -a'
+
+# `tre` is a shorthand for `exa` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+alias tre='ls -Ta -I ".git|node_modules|bower_components" --time-style=long-iso'
+
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -46,12 +58,6 @@ alias badge="tput bel"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
-alias tre='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
 
 # Use Git's colored diff
 alias diff='git diff --no-index --color-words "$@"'

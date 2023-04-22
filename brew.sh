@@ -11,18 +11,63 @@ brew update
 brew upgrade
 
 # Package lists
-pkg_list=(bitwarden-cli ccache checkbashisms clang-format ctags fzf git-lfs \
-    iperf3 mas neovim python rename ripgrep shellcheck speedtest-cli tmux tree \
-    uncrustify youtube-dl)
-cask_list=(appcleaner coconutbattery docker firefox flycut font-fira-code \
-    gfxcardstatus iterm2 macs-fan-control qbittorrent scroll-reverser spotify \
-    visual-studio-code vlc
+pkg_list=(
+    bat
+    bitwarden-cli
+    ccache
+    checkbashisms
+    clang-format
+    coreutils
+    ctags
+    exa
+    exiftool
+    fd
+    fzf
+    gh
+    git
+    git-lfs
+    iperf3
+    mas
+    neofetch
+    neovim
+    pigz
+    pixz
+    python
+    rename
+    ripgrep
+    shellcheck
+    speedtest-cli
+    tmux
+    uncrustify
+    youtube-dl
 )
-mas_list=(1116599239 585829637 1147396723 1449412482 1352778147 1295203466)
+cask_list=(
+    appcleaner
+    coconutbattery
+    docker
+    firefox
+    flycut
+    iterm2
+    logitech-g-hub
+    macs-fan-control
+    qbittorrent
+    scroll-reverser
+    spotify
+    visual-studio-code
+    vlc
+)
+mas_list=(
+     585829637  # Todoist
+    1147396723  # WhatsApp
+    1246969117  # Steam Link
+    1295203466  # Microsoft Remote Desktop
+    1352778147  # Bitwarden
+    1497506650  # Yubico Authenticator
+    1529448980  # Reeder
+)
 
 # Install the packages
 brew install "${pkg_list[@]}"
-brew tap homebrew/cask-fonts
 brew install --cask "${cask_list[@]}"
 mas install "${mas_list[@]}"
 

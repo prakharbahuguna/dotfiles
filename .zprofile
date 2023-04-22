@@ -12,7 +12,7 @@ fi
 
 export EDITOR='code'
 export VISUAL='code'
-export PAGER='less'
+export PAGER='bat'
 
 #
 # Language
@@ -47,12 +47,6 @@ typeset -gU cdpath fpath mailpath path
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
 export LESS='-F -g -i -M -R -X -w -z-4'
-
-# Set the Less input preprocessor.
-# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
-if (( $#commands[(i)lesspipe(|.sh)] )); then
-  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
-fi
 
 # Ensure SSH_AUTH_SOCK is always available from the same location, even if you
 # disconnect and later reattach to a tmux session
