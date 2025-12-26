@@ -1,0 +1,4 @@
+local item
+while read item; do
+    echo -n "${(q)item} "
+done

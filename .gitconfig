@@ -63,25 +63,13 @@
     # List contributors with number of commits
     contributors = shortlog --summary --numbered
 
-    # Merge GitHub pull request on top of the `master` branch
-    mpr = "!f() { \
-        if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-            git fetch origin refs/pull/$1/head:pr/$1 && \
-            git rebase master pr/$1 && \
-            git checkout master && \
-            git merge pr/$1 && \
-            git branch -D pr/$1 && \
-            git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
-        fi \
-    }; f"
-
 [apply]
 
     # Detect whitespace errors when applying a patch
     whitespace = fix
 
 [submodule]
-    fetchJobs = 4
+    fetchJobs = 8
 
 [core]
 
@@ -112,6 +100,9 @@
     # Rebase by default on pull
     autosetuprebase = always
 
+    # Show most recently changed branches first.
+	sort = -committerdate
+
 [color]
 
     # Use colors in Git commands that are capable of colored output when
@@ -141,7 +132,7 @@
 
     # Detect copies as well as renames
     renames = copies
-    tool = vscode
+    tool = zed
 
 [diff "bin"]
     # Use `hexdump` to diff binary files
@@ -156,14 +147,12 @@
 
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-    tool = vscode
+    tool = zed
 
 [push]
 
-    # Use the Git 1.x.x default to avoid errors on machines with old Git
-    # installations. To use `simple` instead, add this to your `~/.extra` file:
-    # `git config --global push.default simple`. See http://git.io/mMah-w.
-    default = matching
+    # https://git-scm.com/docs/git-config#git-config-pushdefault
+    default = simple
     # Make `git push` push relevant annotated tags when pushing branches out.
     followTags = true
 
@@ -194,22 +183,16 @@
     # Use the OS X keychain for retrieving SSH credentials
     helper = osxkeychain
 
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    required = true
-    process = git-lfs filter-process
-
 [user]
 
     # My details.
     name = Prakhar Bahuguna
     email = prakharbahuguna@users.noreply.github.com
 
-[mergetool "vscode"]
+[mergetool "zed"]
 
-    cmd = "code --wait "
+    cmd = "zed --wait"
 
-[difftool "vscode"]
+[difftool "zed"]
 
-    cmd = "code --wait --diff  "
+    cmd = "zed --wait --diff"

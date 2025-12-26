@@ -1,69 +1,60 @@
-#!/bin/bash
+#!/bin/zsh
+
+if [[ $OSTYPE != *darwin* ]]
+then
+    echo 'This script is only for MacOS'
+    exit 1
+fi
 
 # First, install Homebrew if it's not already installed
 command -v brew > /dev/null ||
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Make sure we're using the latest Homebrew.
-brew update
-
 # Upgrade any already-installed formulae.
+brew update
 brew upgrade
 
 # Package lists
 pkg_list=(
     bat
-    bitwarden-cli
     ccache
     checkbashisms
     clang-format
-    coreutils
-    ctags
-    exa
     exiftool
+    eza
     fd
     fzf
     gh
-    git
-    git-lfs
-    iperf3
+    go
     mas
-    neofetch
     neovim
-    pigz
-    pixz
     python
     rename
     ripgrep
+    ruff
+    rust
     shellcheck
-    speedtest-cli
-    tmux
-    uncrustify
-    youtube-dl
+    uv
+    yt-dlp
 )
 cask_list=(
     appcleaner
-    coconutbattery
-    docker
-    firefox
-    flycut
-    iterm2
+    calibre
+    fastmail
+    ghostty
     logitech-g-hub
-    macs-fan-control
-    qbittorrent
+    obsidian
     scroll-reverser
-    spotify
-    visual-studio-code
+    signal
+    tidal
     vlc
+    zed
+    zen
 )
 mas_list=(
-     585829637  # Todoist
-    1147396723  # WhatsApp
-    1246969117  # Steam Link
-    1295203466  # Microsoft Remote Desktop
+    310633997   # WhatsApp
     1352778147  # Bitwarden
     1497506650  # Yubico Authenticator
-    1529448980  # Reeder
 )
 
 # Install the packages
@@ -75,6 +66,8 @@ mas install "${mas_list[@]}"
 brew cleanup
 
 # Post-install stuff
-git lfs install
-/usr/local/opt/fzf/install
-pip3 install -U pip setuptools wheel
+pushd /opt/homebrew/bin
+for i in {,e,f,z,ze,zf}grep
+    do cp -s ugrep $i
+done
+popd

@@ -41,23 +41,15 @@ To update later on, just run that command again.
 When setting up a new Mac, you may want to set some sensible MacOS defaults:
 
 ```bash
-./.macos
+./macos.sh
 ```
 
 ### Install Homebrew formulae
 
-When setting up a new Mac, you may want to install some common [Homebrew](http://brew.sh/) formulae (after installing Homebrew, of course):
+When setting up a new Mac, you may want to install some common [Homebrew](http://brew.sh/) formulae. This will install Homebrew if not already installed:
 
 ```bash
 ./brew.sh
-```
-
-### Setup Visual Studio Code
-
-To install the settings file and extensions for Visual Studio Code:
-
-```bash
-./vscode.sh
 ```
 
 While this dotfiles repo is primarily targeted at MacOS since that’s where I spend most of my time, it should also work fine on Ubuntu.

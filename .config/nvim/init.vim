@@ -56,20 +56,19 @@ nnoremap ; :
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'ayu-theme/ayu-vim'
-Plug 'vim-airline/vim-airline'          " Airline status line
+Plug 'EdenEast/nightfox.nvim'
+Plug 'nvim-lualine/lualine.nvim'        " Lualine status line
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'tpope/vim-fugitive'               " Git integration
 Plug 'airblade/vim-gitgutter'           " Git gutter signs
-Plug '/usr/local/opt/fzf' | Plug '~/.fzf' | Plug 'junegunn/fzf.vim'          " Fast searching
-Plug 'sjl/vitality.vim'                 " Tmux/iTerm integration
+Plug 'ibhagwan/fzf-lua'                 " Fast searching
 
 call plug#end()
 
 set termguicolors                       " Enable true color support
-colorscheme ayu                         " Set colorscheme
+colorscheme carbonfox                   " Set colorscheme
 
-" Configure Airline to use theme, show buffers and use Powerline symbols
-let g:airline_theme='ayu'
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-let g:airline#extensions#virtualenv#enabled=1
+lua << END
+require('lualine').setup()
+require("fzf-lua").setup({'fzf-native'})
+END
