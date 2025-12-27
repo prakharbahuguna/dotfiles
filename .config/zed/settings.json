@@ -55,4 +55,11 @@
       "language_servers": ["ty", "ruff"],
     },
   },
+  "auto_install_extensions": {
+    "dockerfile": true,
+    "git-firefly": true,
+    "neocmake": true,
+    "nvim-nightfox": true,
+    "toml": true,
+  }
 }
