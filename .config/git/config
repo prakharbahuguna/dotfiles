@@ -12,20 +12,35 @@
     # `git di $number` shows the diff between the state `$number` revisions ago and the current state
     di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
+    # Fetch
+    fa = fetch --all
+
     # Pull in remote changes for the current repository and all its submodules
-    p = pull --recurse-submodules
+    pl = pull --recurse-submodules
+
+    # Push this branch upstream
+    psh = push -u origin
+
+    # Force push with lease
+    pshf = push --force-with-lease
 
     # Clone a repository including all submodules
-    c = clone --recursive
+    cl = clone --recursive
+
+    # Commit
+    c = commit
 
     # Commit all changes
-    ca = !git add -A && git commit -av
+    ca = !git add -A && git commit -a
 
     # Completely clean untracked files and directories from the repo
-    cl = clean -fxdfq
+    cln = clean -fxdfq
 
     # Switch to a branch, creating it if necessary
-    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    bc = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+    # Delete branch
+    bd = branch --delete
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
@@ -38,17 +53,23 @@
     # Credit an author on the latest commit
     credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 
-    # Interactive rebase with the given number of latest commits
-    reb = "!r() { git rebase -i HEAD~$1; }; r"
+    # Reset
+    wr = reset --soft
+    wR = reset --hard
 
-    # Remove the old tag with this name and tag the latest commit with it.
-    retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+    # Rebase
+    r = rebase
+    ri = rebase -i
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+    ra = rebase --abort
+    rc = rebase --continue
+
+    # Remotes
+    R = remote
+    Ra = remote add
 
     # Find branches containing commit
     fb = "!f() { git branch -a --contains $1; }; f"
-
-    # Find tags containing commit
-    ft = "!f() { git describe --always --contains $1; }; f"
 
     # Find commits by source code
     fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
@@ -63,19 +84,38 @@
     # List contributors with number of commits
     contributors = shortlog --summary --numbered
 
+    # Submodules
+    s = submodule
+    ss = submodule sync
+    si = submodule update --init --recursive
+    su = submodule update --remote --recursive
+
+    # Stash
+    st = stash
+    stl = stash list
+    stp = stash pop
+    stx = stash drop
+
 [apply]
 
     # Detect whitespace errors when applying a patch
     whitespace = fix
 
+[checkout]
+
+    # Use origin as the default remote
+    defaultRemote = origin
+
+    # Enable parallel checkouts using all logical cores
+    workers = 0
+
 [submodule]
-    fetchJobs = 8
+    fetchJobs = 0
 
 [core]
 
     # Use custom `.gitignore` and `.gitattributes`
     excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
 
     # Treat spaces before tabs and all kinds of trailing whitespace as an error
     # [default] trailing-space: looks for spaces at the end of a line
@@ -95,6 +135,9 @@
     # https://git-scm.com/docs/git-update-index#_untracked_cache
     untrackedCache = true
 
+    # Use the built-in filesystem monitor to speed up `git status` and others
+    fsmonitor = true
+
 [branch]
 
     # Rebase by default on pull
@@ -102,12 +145,6 @@
 
     # Show most recently changed branches first.
 	sort = -committerdate
-
-[color]
-
-    # Use colors in Git commands that are capable of colored output when
-    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-    ui = auto
 
 [color "branch"]
 
@@ -128,6 +165,10 @@
     changed = yellow bold
     untracked = red bold
 
+[commit]
+
+    verbose = true
+
 [diff]
 
     # Detect copies as well as renames
@@ -137,6 +178,14 @@
 [diff "bin"]
     # Use `hexdump` to diff binary files
     textconv = hexdump -v -C
+
+[fetch]
+
+    # Fetch from repo in parallel
+    parallel = 0
+
+    # Update the commit graph after fetch
+    writeCommitGraph = true
 
 [help]
 
@@ -149,10 +198,15 @@
     log = true
     tool = zed
 
+[pack]
+
+    threads = 0
+
 [push]
 
     # https://git-scm.com/docs/git-config#git-config-pushdefault
     default = simple
+    autoSetupRemote = true
     # Make `git push` push relevant annotated tags when pushing branches out.
     followTags = true
 
