@@ -5,8 +5,7 @@ cd "$(dirname "${0}")" || exit 1
 git pull origin master
 
 doIt() {
-    rsync --exclude={'.git/','.DS_Store','*.sh','*.md','LICENSE-MIT.txt'} \
-        -avh --no-perms . ~
+    rsync --exclude={'.git/','.DS_Store'} -avh --no-perms .* ~
     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
