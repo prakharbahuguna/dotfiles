@@ -56,7 +56,7 @@ nnoremap ; :
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'EdenEast/nightfox.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nvim-lualine/lualine.nvim'        " Lualine status line
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'tpope/vim-fugitive'               " Git integration
@@ -66,7 +66,7 @@ Plug 'ibhagwan/fzf-lua'                 " Fast searching
 call plug#end()
 
 set termguicolors                       " Enable true color support
-colorscheme carbonfox                   " Set colorscheme
+colorscheme catppuccin                  " Set colorscheme
 
 lua << END
 require('lualine').setup()

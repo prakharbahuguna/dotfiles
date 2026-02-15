@@ -23,6 +23,11 @@
       "enabled": true,
     },
   },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
+  },
   "indent_guides": {
     "coloring": "indent_aware",
     "background_coloring": "indent_aware",
@@ -41,8 +46,8 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Dayfox - opaque",
-    "dark": "Carbonfox - opaque",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
   },
   "title_bar": {
     "show_branch_icon": true,
@@ -56,10 +61,11 @@
     },
   },
   "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true,
     "dockerfile": true,
     "git-firefly": true,
     "neocmake": true,
-    "nvim-nightfox": true,
     "toml": true,
-  }
+  },
 }
