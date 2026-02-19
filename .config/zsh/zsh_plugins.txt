@@ -20,9 +20,6 @@ belak/zsh-utils path:history
 # Terminal title
 trystan2k/zsh-tab-title
 
-# Prompt
-romkatv/powerlevel10k
-
 # Utilities
 zshzoo/macos conditional:is-macos
 belak/zsh-utils path:utility
