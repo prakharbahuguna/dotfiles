@@ -85,10 +85,10 @@
     contributors = shortlog --summary --numbered
 
     # Submodules
-    s = submodule
-    ss = submodule sync
-    si = submodule update --init --recursive
-    su = submodule update --remote --recursive
+    su = submodule
+    sus = submodule sync
+    sui = submodule update --init --recursive
+    suu = submodule update --remote --recursive
 
     # Stash
     st = stash
