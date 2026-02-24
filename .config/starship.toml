@@ -19,6 +19,7 @@ $status\
 $cmd_duration\
 [](fg:teal bg:lavender)\
 $time\
+[](lavender)\
 [─╮](surface2)\
 $line_break\
 [╰─](surface2)"""
@@ -103,7 +104,7 @@ tag_disabled = false
 disabled = false
 time_format = "%R"
 style = "fg:crust bg:lavender"
-format = "[ $time ]($style)"
+format = "[ $time]($style)"
 
 [status]
 disabled = false
