@@ -22,20 +22,27 @@ brew "uv"
 brew "yt-dlp"
 
 cask "appcleaner"
+cask "brave-browser"
 cask "calibre"
+cask "claude"
 cask "fastmail"
+cask "flycut"
 cask "font-cascadia-code-nf"
 cask "ghostty"
+cask "lm-studio"
 cask "logitech-g-hub"
 cask "obsidian"
+cask "open-video-downloader"
 cask "scroll-reverser"
 cask "signal"
 cask "syncthing-app"
 cask "tidal"
 cask "vlc"
 cask "zed"
-cask "zen"
 
 mas "Bitwarden", id: 1352778147
+mas "Surfshark", id: 1437809329
+mas "Tailscale", id: 1475387142
+mas "UK Salary Calculator", id: 505795901
 mas "WhatsApp", id: 310633997
 mas "Yubico Authenticator", id: 1497506650
