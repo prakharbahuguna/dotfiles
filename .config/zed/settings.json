@@ -13,11 +13,8 @@
   "buffer_font_family": "Cascadia Code NF",
   "current_line_highlight": "all",
   "cursor_blink": true,
-  "disable_ai": true,
+  "disable_ai": false,
   "ensure_final_newline_on_save": true,
-  "file_finder": {
-    "git_status": true,
-  },
   "git": {
     "inline_blame": {
       "enabled": true,
@@ -25,8 +22,8 @@
   },
   "icon_theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha",
+    "light": "Gruvbox Material Icon Theme",
+    "dark": "Gruvbox Material Icon Theme",
   },
   "indent_guides": {
     "coloring": "indent_aware",
@@ -46,11 +43,11 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha",
+    "light": "Gruvbox Light Hard",
+    "dark": "Gruvbox Dark Hard",
   },
   "title_bar": {
-    "show_branch_icon": true,
+    "show_branch_status_icon": true
   },
   "use_on_type_format": true,
   "use_smartcase_search": true,
