@@ -11,6 +11,7 @@ command -v brew > /dev/null ||
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install the packages
+brew trust jandedobbeleer/oh-my-posh
 brew bundle install --upgrade
 
 # Post-install stuff

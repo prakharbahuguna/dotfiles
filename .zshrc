@@ -27,4 +27,4 @@ unset _rc
 # Don't use viins keymap despite Neovim being set to $EDITOR
 bindkey -e
 
-eval "$(starship init zsh)"
+eval "$(oh-my-posh init zsh --config ~/.config/omp.toml)"
